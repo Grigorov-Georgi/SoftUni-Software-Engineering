@@ -10,14 +10,11 @@ public class BrowserHistoryUpgrade {
 
         String site = null;
         String command = scanner.nextLine();;
-        String futureElement = null;
 
         while (!command.equals("Home")){
 
             if (command.equals("forward")){
-                if (futureElement != null) {
-                    future.push(futureElement);
-                }
+
                 if (future.isEmpty()){
                     System.out.println("no next URLs");
                     command = scanner.nextLine();
@@ -25,7 +22,6 @@ public class BrowserHistoryUpgrade {
                 }else {
                     history.push(site);
                     site = future.pop();
-                    futureElement = null;
                 }
             }else if (command.equals("back")){
                 if (history.isEmpty()){
@@ -33,7 +29,7 @@ public class BrowserHistoryUpgrade {
                     command = scanner.nextLine();
                     continue;
                 }else {
-                    futureElement = site;
+                    future.push(site);
                     site = history.pop();
                 }
             }else {
