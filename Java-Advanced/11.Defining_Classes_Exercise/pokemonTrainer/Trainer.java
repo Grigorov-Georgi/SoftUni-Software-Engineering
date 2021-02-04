@@ -42,13 +42,9 @@ public class Trainer {
         }else {
             for (Pokemon pokemon : pokemonList) {
                 pokemon.setHealth(pokemon.getHealth() - 10);
-                if (pokemon.getHealth() <= 0){
-                    pokemonList.remove(pokemon);
-                }
-                if (pokemonList.isEmpty()){
-                    break;
-                }
             }
+
+            pokemonList.removeIf(pokemon -> pokemon.getHealth() <= 0);
         }
     }
 
