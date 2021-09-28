@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+
+<body>
+    <h1>DOM Introduction</h1>
+    <button onClick="alert('Are you dumb?')">Don't click me!</button>
+    <input>
+    <ul>
+        <li>DOM Methods Example</li>
+        <li>DOM Properties Example</li>
+    </ul>
+    <script>
+        function edit(element, match, replacer){
+            const text = element.textContent;
+            element.textContent = text.replaceAll(match, replacer);
+        }
+    </script>
+</body>
+
+</html>
