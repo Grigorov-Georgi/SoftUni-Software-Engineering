@@ -26,5 +26,7 @@ function solve() {
 
       const total = cart.reduce((t, c) => t + c.price, 0);
       output.value += `You bought ${[...products.keys()].join(', ')} for ${total.toFixed(2)}.`;
+      document.getElementsByClassName('shopping-cart')[0].removeEventListener('click', onClick);
+      document.getElementsByClassName('checkout')[0].removeEventListener('click', checkout);
    }
 }
